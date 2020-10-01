@@ -1,6 +1,6 @@
 import React from 'react';
 import { Canvas } from "react-three-fiber";
-// import './App.css';
+import './App.css';
 
 function Cube() {
   return (
@@ -15,11 +15,11 @@ function Cube() {
 
 function Scene() {
   return (
-    <>
+    <mesh rotation={[10,10,0]} position={[0,0,0]}>
       <ambientLight />
-      <pointLight position={[-1,2,4]} />
-
-    </>
+      <pointLight  intensity={0.5} position={[-1,2,4]} />
+      <Cube />
+    </mesh>
   )
 }
 
