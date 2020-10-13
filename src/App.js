@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { OrbitControls } from 'drei';
+import { OrbitControls, Torus } from 'drei';
 import { Canvas, useThree, extend, useFrame } from "react-three-fiber";
 import { a, useSpring } from 'react-spring/three';
 
@@ -67,6 +67,14 @@ function Scene() {
       <spotLight castShadow={true} intensity={0.5} position={[0,10,4]} />
       <Cube rotation={[10,10,0]} position={[0,0,0]}/>
       <Cube rotation={[10,20,0]} position={[2,2,0]}/>
+      <Torus position={[-2,1,-1]}>
+        <meshPhongMaterial 
+          shininess={100}
+          metalness={0.5} 
+          roughness={1} 
+          attach="material" 
+          color={"blue"} />
+      </Torus>
       <Plane  />
       <OrbitControls />
     </>
