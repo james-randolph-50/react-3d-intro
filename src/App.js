@@ -38,6 +38,7 @@ function Cube(props) {
       <sphereBufferGeometry attach="geometry" args={[1,8,6]} />
       <meshPhongMaterial 
         flatShading={true}
+        shininess={100}
         metalness={0.5} 
         roughness={1} 
         attach="material" 
@@ -60,7 +61,7 @@ function Scene() {
   return (
     <>
       <ambientLight />
-      <pointLight  intensity={0.5} position={[-1,2,4]} />
+      <pointLight  intensity={0.5} position={[0,0,3]} />
       <Cube rotation={[10,10,0]} position={[0,0,0]}/>
       <Cube rotation={[10,20,0]} position={[2,2,0]}/>
 
