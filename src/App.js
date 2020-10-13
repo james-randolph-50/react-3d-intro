@@ -47,6 +47,15 @@ function Cube(props) {
   );
 }
 
+function Plane() {
+  return (
+    <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0,-2, 0]}>
+      <planeBufferGeometry attach="geometry" args={[10,10]}/>
+      <meshPhongMaterial attach="material" color="blue" />
+    </mesh>
+  )
+}
+
 // args = [width, height, depth]
 
 function Scene() {
@@ -64,7 +73,7 @@ function Scene() {
       <pointLight  intensity={0.5} position={[0,0,3]} />
       <Cube rotation={[10,10,0]} position={[0,0,0]}/>
       <Cube rotation={[10,20,0]} position={[2,2,0]}/>
-
+      <Plane  />
       <orbitControls args={[ camera, domElement ]} />
     </>
   )
