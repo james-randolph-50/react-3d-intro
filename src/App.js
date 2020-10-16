@@ -5,8 +5,11 @@ import { Canvas, useFrame } from "react-three-fiber";
 import './App.css';
 
 function  Boxes() {
+
+  const ref = useRef();
+
   return (
-    <instancedMesh>
+    <instancedMesh ref={ref} args={[null, null, 1000]}>
       <boxBufferGeometry attach="geometry" args={[0.7,0.7,0.7]} />
       <meshPhongMaterial attach="material" color="teal" />
     </instancedMesh>
@@ -20,6 +23,7 @@ function Scene() {
     <>
       <ambientLight />
       <pointLight intensity={0.5} position={[0,10,4]} />
+      <Boxes />
       <OrbitControls />
     </>
   )
