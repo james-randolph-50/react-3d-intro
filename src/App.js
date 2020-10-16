@@ -4,7 +4,7 @@ import { TextureLoader } from "three";
 import { Canvas, useThree, extend, useFrame, useLoader } from "react-three-fiber";
 import { a, useSpring } from 'react-spring/three';
 import { Controls , useControl, ControlsProvider } from 'react-three-gui';
-import imageUrl from "./logo192.png";
+import imageUrl from "./logo.png";
 import './App.css';
 
 function Cube(props) {
@@ -41,6 +41,7 @@ function Cube(props) {
     >
       <boxBufferGeometry attach="geometry" args={[1,1,1]} />
       <meshPhongMaterial 
+        map={texture}
         map={texture}
         flatShading={true}
         shininess={100}
