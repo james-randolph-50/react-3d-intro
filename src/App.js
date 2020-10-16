@@ -39,7 +39,7 @@ function Cube(props) {
       onPointerOver={()  =>  setIsHovered(true)}
       onPointerOut={()  =>  setIsHovered(false)}
     >
-      <sphereBufferGeometry attach="geometry" args={[1,8,6]} />
+      <boxBufferGeometry attach="geometry" args={[1,1,1]} />
       <meshPhongMaterial 
         map={texture}
         flatShading={true}
@@ -47,7 +47,7 @@ function Cube(props) {
         metalness={0.5} 
         roughness={1} 
         attach="material" 
-        color={color} />
+         />
     </a.mesh>
   );
 }
@@ -56,7 +56,7 @@ function Plane() {
   return (
     <mesh receiveShadow={true} rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, -5]}>
       <planeBufferGeometry attach="geometry" args={[20,20]}/>
-      <meshPhongMaterial attach="material" color="#d3d3d3"  />
+      <meshPhongMaterial attach="material"  />
     </mesh>
   )
 }
