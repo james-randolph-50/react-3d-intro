@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { OrbitControls, Torus } from 'drei';
 import { Canvas, useThree, extend, useFrame } from "react-three-fiber";
 import { a, useSpring } from 'react-spring/three';
-import { Controls , useControl } from 'react-three-gui';
+import { Controls , useControl, ControlsProvider } from 'react-three-gui';
 
 import './App.css';
 
@@ -57,11 +57,9 @@ function Plane() {
   )
 }
 
-// args = [width, height, depth]
-
 function Scene() {
 
-  const positionX =  useControl('Position X', { type: 'number' });
+  const positionX = useControl("Position X", { type: "number",max:  10, min: -10 });
 
   return (
     <>
@@ -86,10 +84,13 @@ function Scene() {
 function App() {
   return (
     <>
+
+    <ControlsProvider>
       <Canvas shadowMap={true}>
         <Scene />
       </Canvas>
       <Controls />
+      </ControlsProvider>
     </>
   );
 }
